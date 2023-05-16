@@ -24,6 +24,7 @@ We will be following the reference architecture above which is a real-world **Se
 
 Monorepo with microservices and infrastructure part
 
+```sh
 ├── bin
 ├── src
 │   ├── basket
@@ -40,6 +41,7 @@ Monorepo with microservices and infrastructure part
 ├── package.json
 ├── package-lock.json
 └── .gitignore
+```
 
 * cdk.json: tells the CDK Toolkit how to execute your app.
 * src folder: Microservices development codes with. Lambda Functions Developed in Nodejs using AWS SDK for JavaScript v3.
@@ -84,3 +86,17 @@ This file uses [Amazon SQS](https://aws.amazon.com/sqs) Fully managed message qu
 ### lib/eventbus.ts
 
 This file uses [Amazon EventBridge](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_events-readme.html) to delivers a near real-time stream of system events that describe changes in AWS resources.
+
+## Microservices (src folder)
+
+### product
+
+Products microservice folder. The index.js contains an node.js function that will run by the corresponding lambda to handle all api calls related to products.
+
+### basket
+
+Basket microservice folder. The index.js contains an node.js function that will run by the corresponding lambda to handle all api calls related to basket.
+
+### ordering
+
+Orders microservice folder. The index.js contains an node.js function that will watch for events checkout events.
